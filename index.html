@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Maranatha Charters – New England Crewed Catamaran Charters</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Maranatha Charters offers luxury, crewed multi-day sailing charters across the New England coast aboard a spacious 53’ Royal Cape catamaran." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --bg-alt: #ffffff;
+      --primary: #0b3b5c;  /* deep nautical blue */
+      --accent: #d4a15f;   /* warm gold accent */
+      --text: #1e1f23;
+      --muted: #6b7280;
+      --border: #e2e4ea;
+      --max-width: 1100px;
+      --radius-lg: 18px;
+      --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Layout */
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(247, 248, 251, 0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(226, 228, 234, 0.6);
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 2px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--primary);
+      background: #fff;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-text span:first-child {
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+
+    .brand-text span:last-child {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 500;
+      position: relative;
+      padding-bottom: 0.1rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.2rem;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 0.5rem 0.95rem;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 10px 18px rgba(11, 59, 92, 0.25);
+      transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      background: #07263b;
+      box-shadow: 0 14px 25px rgba(11, 59, 92, 0.3);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    section {
+      padding: 3.5rem 1.25rem;
+    }
+
+    .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    /* Hero */
+    .hero {
+      padding-top: 3rem;
+      padding-bottom: 4rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.1rem, 3vw, 2.7rem);
+      line-height: 1.2;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      max-width: 30rem;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-primary {
+      padding: 0.75rem 1.4rem;
+      border-radius: 999px;
+      border: none;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      background: #07263b;
+      box-shadow: 0 16px 28px rgba(15, 23, 42, 0.25);
+    }
+
+    .btn-secondary {
+      padding: 0.75rem 1.3rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--primary);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.1s ease, border-color 0.1s ease;
+    }
+
+    .btn-secondary:hover {
+      background: #eef2f7;
+      border-color: #cbd2e1;
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-card {
+      background: linear-gradient(145deg, #ffffff, #f3f6fb);
+      padding: 1.5rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(226, 228, 234, 0.9);
+    }
+
+    .hero-image-placeholder {
+      border-radius: 14px;
+      aspect-ratio: 4 / 3;
+      background: radial-gradient(circle at 20% 20%, #eaf1fb, #c4d5ea);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    .hero-image-placeholder::after {
+      content: "Boat photo placeholder";
+      position: absolute;
+      bottom: 0.75rem;
+      right: 0.75rem;
+      font-size: 0.75rem;
+      color: rgba(15, 23, 42, 0.7);
+      background: rgba(255, 255, 255, 0.8);
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(11, 59, 92, 0.07);
+      color: var(--primary);
+      font-size: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: var(--primary);
+    }
+
+    .hero-card-text {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      font-size: 0.8rem;
+    }
+
+    .hero-feature {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .hero-feature span:first-child {
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 0.8rem;
+    }
+
+    .hero-feature span:last-child {
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    /* Generic section headings */
+    .section-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-subheading {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 1.75rem;
+      max-width: 40rem;
+    }
+
+    /* Why section */
+    .why-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+      gap: 2rem;
+    }
+
+    .why-highlights {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .why-card {
+      background: var(--bg-alt);
+      padding: 1rem;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      font-size: 0.85rem;
+    }
+
+    .why-card-title {
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+      font-size: 0.9rem;
+    }
+
+    .why-list {
+      list-style: none;
+      margin-top: 0.75rem;
+    }
+
+    .why-list li {
+      position: relative;
+      padding-left: 1.1rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .why-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+      font-size: 1rem;
+    }
+
+    .why-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+    }
+
+    /* How it works */
+    .steps-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .step-card {
+      background: var(--bg-alt);
+      padding: 1rem;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      font-size: 0.86rem;
+    }
+
+    .step-number {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: rgba(11, 59, 92, 0.07);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .step-title {
+      font-weight: 600;
+      font-size: 0.92rem;
+      margin-bottom: 0.25rem;
+      color: var(--primary);
+    }
+
+    /* The Yacht */
+    .yacht-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .yacht-pill {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .yacht-list {
+      list-style: none;
+      columns: 2;
+      column-gap: 1.5rem;
+      margin: 0.75rem 0 0.5rem;
+      padding: 0;
+    }
+
+    .yacht-list li {
+      font-size: 0.85rem;
+      padding-left: 0.75rem;
+      position: relative;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .yacht-list li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+    }
+
+    .yacht-card {
+      background: var(--bg-alt);
+      padding: 1.25rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      font-size: 0.85rem;
+    }
+
+    .yacht-image-placeholder {
+      border-radius: 10px;
+      aspect-ratio: 4 / 3;
+      background: linear-gradient(135deg, #dde7f3, #b8ccd8);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 0.75rem;
+    }
+
+    .yacht-image-placeholder::after {
+      content: "Interior / layout photo placeholder";
+      position: absolute;
+      bottom: 0.6rem;
+      right: 0.7rem;
+      font-size: 0.7rem;
+      color: rgba(15, 23, 42, 0.7);
+      background: rgba(255, 255, 255, 0.85);
+      padding: 0.18rem 0.6rem;
+      border-radius: 999px;
+    }
+
+    /* Charters & Rates */
+    .charters {
+      background: var(--bg-alt);
+    }
+
+    .charter-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+    }
+
+    .charter-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+      background: #fff;
+    }
+
+    .charter-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .charter-title {
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+      font-size: 1rem;
+    }
+
+    .charter-price {
+      font-size: 0.9rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .charter-text {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .charter-list {
+      font-size: 0.83rem;
+      color: var(--muted);
+      margin-left: 1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .fareharbor-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+    }
+
+    .charters-aside {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .charters-aside strong {
+      color: var(--primary);
+    }
+
+    /* Destinations */
+    .dest-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .dest-card {
+      background: var(--bg-alt);
+      border-radius: 14px;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      font-size: 0.85rem;
+    }
+
+    .dest-name {
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+      font-size: 0.92rem;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .about-card {
+      background: var(--bg-alt);
+      padding: 1.25rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      font-size: 0.85rem;
+    }
+
+    /* FAQ */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+      gap: 2rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--primary);
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-a {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Contact */
+    .contact {
+      background: var(--bg-alt);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 2rem;
+    }
+
+    .contact-details {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .contact-details p + p {
+      margin-top: 0.25rem;
+    }
+
+    .contact-form {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .form-row {
+      margin-bottom: 0.75rem;
+    }
+
+    .form-row label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+      color: var(--primary);
+    }
+
+    .form-row input,
+    .form-row textarea,
+    .form-row select {
+      width: 100%;
+      padding: 0.55rem 0.6rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      font-size: 0.85rem;
+      font-family: inherit;
+      resize: vertical;
+    }
+
+    .form-row textarea {
+      min-height: 90px;
+    }
+
+    .form-helper {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    footer {
+      padding: 1.5rem 1.25rem 2rem;
+      border-top: 1px solid var(--border);
+      background: #f3f4f8;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .footer-inner span strong {
+      color: var(--primary);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-grid,
+      .why-grid,
+      .yacht-grid,
+      .charter-grid,
+      .about-grid,
+      .faq-grid,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .dest-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .steps-row {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .why-highlights {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .nav {
+        align-items: center;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-links.mobile-open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 56px;
+        right: 1.25rem;
+        background: #fff;
+        padding: 0.75rem 1rem;
+        border-radius: 12px;
+        box-shadow: var(--shadow-soft);
+        border: 1px solid var(--border);
+        z-index: 60;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .dest-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="brand-mark">MC</div>
+        <div class="brand-text">
+          <span>Maranatha Charters</span>
+          <span>New England Crewed Catamaran</span>
+        </div>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="toggleNav()">☰</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#hero">Home</a>
+        <a href="#yacht">The Yacht</a>
+        <a href="#charters">Charters</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+        <button class="nav-cta" onclick="scrollToSection('charters')">Check Availability</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="section-inner">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">New England · Crewed Catamaran</div>
+            <h1 class="hero-title">Charters that feel more like a condo than a sailboat.</h1>
+            <p class="hero-subtitle">
+              Stretch out, slow down, and see the New England coast from a 53’ Royal Cape catamaran designed for space and comfort — just six guests, a professional crew, and room to truly relax.
+            </p>
+            <div class="hero-cta-group">
+              <button class="btn-primary" onclick="scrollToSection('charters')">View Charters &amp; Rates</button>
+              <button class="btn-secondary" onclick="scrollToSection('contact')">Talk about a trip</button>
+            </div>
+            <p class="hero-note">
+              Home port: Marina Bay, Quincy, MA · Serving the entire New England coast
+            </p>
+          </div>
+          <div class="hero-card">
+            <div class="hero-image-placeholder"></div>
+            <div class="hero-pill">2011 Royal Cape 53’ · 5 cabins · 6 guests</div>
+            <div class="hero-card-title">A rare find for New England.</div>
+            <p class="hero-card-text">
+              Most sailboats feel like, well, sailboats — narrow and compact. Maranatha’s wide catamaran layout feels more like a floating condo, with private cabins, real beds, and generous living spaces.
+            </p>
+            <div class="hero-features">
+              <div class="hero-feature">
+                <span>Multi-day specialists</span>
+                <span>Long weekends &amp; full coastal adventures</span>
+              </div>
+              <div class="hero-feature">
+                <span>Fully crewed</span>
+                <span>You relax, your captain &amp; crew handle the rest</span>
+              </div>
+              <div class="hero-feature">
+                <span>Up to 6 guests</span>
+                <span>Private use of the yacht — no crowds</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section id="why">
+      <div class="section-inner">
+        <div class="why-grid">
+          <div>
+            <h2 class="section-heading">Why Maranatha?</h2>
+            <p class="section-subheading">
+              Because you love the idea of sailing New England — but you’d rather not give up space, comfort, or privacy to do it.
+            </p>
+            <p style="font-size:0.9rem; color:var(--muted); margin-bottom:0.75rem;">
+              Maranatha is a 53’ Royal Cape sailing catamaran with a generous beam and a layout that feels surprisingly like a modern condo. That means:
+            </p>
+            <ul class="why-list">
+              <li>A huge, sheltered cockpit for long dinners and unhurried mornings</li>
+              <li>Private cabins, real mattresses, and space for everyone to spread out</li>
+              <li>Separate lounging areas for reading, napping, chatting, or just watching the horizon</li>
+            </ul>
+            <p class="why-note">
+              If traditional monohulls ever felt a little too tight, you’ll notice the difference the moment you step aboard.
+            </p>
+          </div>
+          <div>
+            <div class="why-highlights">
+              <div class="why-card">
+                <div class="why-card-title">Feels like a vacation home</div>
+                <p>
+                  With five cabins and wide living spaces, Maranatha feels more like a small waterfront condo than a typical sailboat interior.
+                </p>
+              </div>
+              <div class="why-card">
+                <div class="why-card-title">Stable, comfortable ride</div>
+                <p>
+                  Catamarans are more stable than many monohulls. You get the magic of sailing with less heeling and more comfort underway and at anchor.
+                </p>
+              </div>
+              <div class="why-card">
+                <div class="why-card-title">Made for multi-day trips</div>
+                <p>
+                  She’s set up for easy living over days at a time — with air conditioning, generous freshwater capacity, and real storage.
+                </p>
+              </div>
+              <div class="why-card">
+                <div class="why-card-title">Just six overnight guests</div>
+                <p>
+                  We keep things intentionally small and personal: one boat, up to six guests, and a professional crew focused entirely on your trip.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- How it works -->
+        <div style="margin-top:2.75rem;">
+          <h3 class="section-heading" style="font-size:1.3rem;">How it works</h3>
+          <p class="section-subheading">
+            Three simple steps to your New England charter.
+          </p>
+          <div class="steps-row">
+            <div class="step-card">
+              <div class="step-number">1</div>
+              <div class="step-title">Choose your dates</div>
+              <p>
+                Pick a multi-day charter window or a special date for a one-off celebration. Our FareHarbor calendar shows live availability.
+              </p>
+            </div>
+            <div class="step-card">
+              <div class="step-number">2</div>
+              <div class="step-title">Shape the trip</div>
+              <p>
+                We help you decide on route ideas, food preferences, pace, and must-see harbors — then your captain refines it around weather and tides.
+              </p>
+            </div>
+            <div class="step-card">
+              <div class="step-number">3</div>
+              <div class="step-title">Step aboard &amp; switch off</div>
+              <p>
+                Your crew handles the sailing and systems. You claim a cabin, pick a favorite seat, and let the coastline roll by.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE YACHT -->
+    <section id="yacht">
+      <div class="section-inner">
+        <div class="yacht-grid">
+          <div>
+            <h2 class="section-heading">The Yacht</h2>
+            <p class="yacht-pill">2011 Royal Cape 53’ · 5 cabins · Up to 6 overnight guests</p>
+            <p class="section-subheading">
+              Maranatha is wide, bright, and intentionally comfortable. She was built for living aboard — not just day sailing — which makes her a rare fit for New England multi-day charters.
+            </p>
+            <p style="font-size:0.9rem; color:var(--muted);">
+              On deck, there’s space for everyone: a large shaded cockpit, forward seating, and easy walk-around side decks. Inside, the salon and cabins feel more like a compact apartment than a traditional cabin.
+            </p>
+            <ul class="yacht-list">
+              <li>Air conditioning &amp; generator</li>
+              <li>Large freshwater capacity</li>
+              <li>Full galley for real meals</li>
+              <li>Comfortable cockpit dining area</li>
+              <li>Multiple lounging spaces</li>
+              <li>Bluetooth audio</li>
+              <li>Inflatable paddleboards</li>
+              <li>Floating mats &amp; toys</li>
+            </ul>
+            <p class="why-note">
+              We’ll replace these placeholder images with actual photography of Maranatha’s interior, cockpit, and deck.
+            </p>
+          </div>
+          <div class="yacht-card">
+            <div class="yacht-image-placeholder"></div>
+            <p>
+              <strong>Comfort-focused layout.</strong> Five cabins allow flexible sleeping arrangements, and we limit overnight groups to six guests for space and privacy.
+            </p>
+            <p style="margin-top:0.5rem;">
+              <strong>Safety &amp; systems.</strong> Your captain and crew are responsible for navigation, weather routing, docking, anchoring, and the technical side of the yacht. You don’t need any boating experience — unless you’d like to learn.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHARTERS & RATES -->
+    <section id="charters" class="charters">
+      <div class="section-inner">
+        <div class="charter-grid">
+          <div>
+            <h2 class="section-heading">Charters &amp; Rates</h2>
+            <p class="section-subheading">
+              We specialize in multi-day New England charters for up to six guests, with limited availability for single-day and very special events.
+            </p>
+
+            <div class="charter-card">
+              <div class="charter-label">Primary offering</div>
+              <div class="charter-title">Multi-Day Private Yacht Charters</div>
+              <div class="charter-price">From 2 to 7+ nights · Pricing varies by season &amp; itinerary</div>
+              <p class="charter-text">
+                Spend a few days or a full week exploring the New England coast at your own pace. Hop between islands, discover quiet anchorages, or linger in a favorite harbor — every trip is tailored around your group.
+              </p>
+              <ul class="charter-list">
+                <li>Private use of the yacht for up to 6 guests</li>
+                <li>Professional captain and crew</li>
+                <li>Linens, towels, and standard onboard amenities</li>
+                <li>Use of paddleboards and floating toys</li>
+                <li>Fuel for standard cruising within your agreed itinerary</li>
+              </ul>
+              <p class="charter-text">
+                Provisions, marina nights, and premium add-ons are customized to your preferences and priced per trip.
+              </p>
+              <button class="btn-primary" onclick="scrollToFareHarbor()">Check multi-day availability</button>
+            </div>
+
+            <div class="charter-card">
+              <div class="charter-label">Limited availability</div>
+              <div class="charter-title">Special Event &amp; Single-Day Charters</div>
+              <div class="charter-price">Ideal for proposals, anniversaries &amp; milestones</div>
+              <p class="charter-text">
+                We reserve a small portion of our calendar for especially meaningful single-day sails: engagements, milestone birthdays, intimate family celebrations, or select corporate outings.
+              </p>
+              <p class="charter-text">
+                Tell us what you’re celebrating and we’ll let you know what’s possible given the season and schedule.
+              </p>
+              <button class="btn-secondary" onclick="scrollToSection('contact')">Request a special event date</button>
+            </div>
+
+            <p class="fareharbor-note">
+              All bookings are handled securely through our FareHarbor online system. Exact pricing for your dates will display during the booking process, including any add-ons you choose.
+            </p>
+          </div>
+
+          <aside class="charters-aside">
+            <strong>FareHarbor booking widget</strong>
+            <p style="margin-top:0.5rem;">
+              This is where your FareHarbor widget will appear once your account is set up.
+            </p>
+            <div style="margin-top:0.75rem; padding:0.75rem; border-radius:12px; border:1px dashed var(--border); background:#f9fafc; font-size:0.8rem;">
+              <!-- TODO: Replace this placeholder with your FareHarbor embed code. -->
+              <p><strong>Coming soon:</strong> Live calendar &amp; booking.</p>
+              <p style="margin-top:0.25rem;">
+                FareHarbor provides a script snippet you can paste here to show live availability and handle reservations directly from this page.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESTINATIONS -->
+    <section id="destinations">
+      <div class="section-inner">
+        <h2 class="section-heading">Destinations</h2>
+        <p class="section-subheading">
+          From quick island escapes to full coastal adventures, Maranatha is available for charters across the New England coast. Every itinerary is customized around your group and the weather.
+        </p>
+        <div class="dest-grid">
+          <div class="dest-card">
+            <div class="dest-name">Islands Sampler · 3 nights</div>
+            <p>
+              Boston → Provincetown → Martha’s Vineyard → return via Cape Cod Bay. A fast-paced taste of island life, perfect for long weekends.
+            </p>
+          </div>
+          <div class="dest-card">
+            <div class="dest-name">Vineyard &amp; Nantucket · 4 nights</div>
+            <p>
+              Split your time between two of New England’s most beloved islands, with quiet anchorages and harbor walks in between.
+            </p>
+          </div>
+          <div class="dest-card">
+            <div class="dest-name">Classic Coastal Loop · 5+ nights</div>
+            <p>
+              Boston → Cape Cod → Nantucket → Martha’s Vineyard → Newport, RI → back north. A true “see the coast” route.
+            </p>
+          </div>
+          <div class="dest-card">
+            <div class="dest-name">Slow &amp; Quiet</div>
+            <p>
+              Prefer fewer moves? We can design a trip with just one or two base harbors, focusing on relaxation, swims, and short sails.
+            </p>
+          </div>
+          <div class="dest-card">
+            <div class="dest-name">Custom Routes</div>
+            <p>
+              Have a sentimental harbor, hometown, or dream stretch of coast in mind? Tell us, and we’ll see what’s possible for your trip length.
+            </p>
+          </div>
+          <div class="dest-card">
+            <div class="dest-name">Seasonal Highlights</div>
+            <p>
+              Spring and fall can be spectacular and quieter. We’ll suggest routes based on the time of year you’d like to travel.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-inner">
+        <div class="about-grid">
+          <div>
+            <h2 class="section-heading">About Maranatha Charters</h2>
+            <p class="section-subheading">
+              A boat built for comfort. A charter experience built for hosting.
+            </p>
+            <p style="font-size:0.9rem; color:var(--muted); margin-bottom:0.75rem;">
+              Maranatha Charters was created around a simple idea: most people love the idea of sailing New England — but not everyone wants to give up space, comfort, and privacy to do it.
+            </p>
+            <p style="font-size:0.9rem; color:var(--muted); margin-bottom:0.75rem;">
+              When we found this Royal Cape 53’ catamaran, we knew it was a rare fit for our coast: wide, stable, bright, and spacious, with room for couples, families, or close friends to spread out and actually relax. It felt less like a boat and more like a condo with a better view.
+            </p>
+            <p style="font-size:0.9rem; color:var(--muted);">
+              We run a small, intentionally personal operation: one boat, a professional crew, and a calendar focused on quality trips over quantity. Whether your dream is a quiet anniversary cruise or a harbor-hopping adventure, we’d love to help you plan it.
+            </p>
+          </div>
+          <div class="about-card">
+            <strong style="display:block; margin-bottom:0.4rem; color:var(--primary); font-size:0.95rem;">
+              Your crew
+            </strong>
+            <p>
+              Detailed captain and crew biographies will appear here — including professional experience, local knowledge, and the human side of your hosts.
+            </p>
+            <p style="margin-top:0.4rem;">
+              For now, know that your crew’s focus is simple: keep you safe, comfortable, and relaxed, while quietly handling the work of sailing and caring for the yacht.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="section-inner">
+        <div class="faq-grid">
+          <div>
+            <h2 class="section-heading">Frequently Asked Questions</h2>
+            <p class="section-subheading">
+              A few quick answers. We’re always happy to talk through details for your specific trip.
+            </p>
+            <div class="faq-item">
+              <div class="faq-q">How many people can stay overnight?</div>
+              <div class="faq-a">
+                We’re set up for up to six overnight guests in private cabins. This keeps the trip comfortable and relaxed for everyone.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">Do I need boating experience?</div>
+              <div class="faq-a">
+                None at all. Your professional captain and crew handle the sailing, docking, anchoring, and navigation. You’re welcome to help or learn, but it’s never required.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">Is food included?</div>
+              <div class="faq-a">
+                We offer flexible provisioning. We can either stock the boat to your preferences or handle full meal planning for you. Provisioning is priced per guest per day and tailored to your group.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">What about seasickness?</div>
+              <div class="faq-a">
+                Catamarans tend to be more stable than monohulls. We also work with your captain to choose routes and anchorages that prioritize comfort whenever conditions allow.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">Can we customize the itinerary?</div>
+              <div class="faq-a">
+                Absolutely. Every multi-day charter is customized around your preferences, within the realities of weather, tides, and travel distance for your dates.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">Is there Wi-Fi onboard?</div>
+              <div class="faq-a">
+                Connectivity options can be arranged depending on your route, but we encourage guests to treat time aboard as a chance to unplug when possible.
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="about-card">
+              <strong style="display:block; margin-bottom:0.4rem; color:var(--primary); font-size:0.95rem;">
+                Liability waivers &amp; policies
+              </strong>
+              <p>
+                Before boarding, all guests will be asked to review and sign a standard Guest Liability Waiver &amp; Assumption of Risk form. This is normal for yacht charters and helps ensure a clear, safe experience for everyone.
+              </p>
+              <p style="margin-top:0.4rem;">
+                Full terms, cancellation policies, and sample waivers can be provided upon request or will be linked directly from your booking confirmation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="section-inner">
+        <div class="contact-grid">
+          <div>
+            <h2 class="section-heading">Contact &amp; Bookings</h2>
+            <p class="section-subheading">
+              Ready to talk dates, destinations, or ideas for a special trip? We’d love to hear what you’re imagining.
+            </p>
+            <div class="contact-details">
+              <p><strong>Email:</strong> <a href="mailto:bookings@maranathacharters.com">bookings@maranathacharters.com</a></p>
+              <p><strong>Home port:</strong> Marina Bay, Quincy, Massachusetts</p>
+              <p><strong>Service area:</strong> New England coastal waters</p>
+            </div>
+            <p class="contact-details">
+              The fastest way to confirm specific dates and pricing is through our FareHarbor booking system. For custom trips or questions, use the form here and we’ll get back to you as soon as we’re back on shore.
+            </p>
+            <button class="btn-primary" onclick="scrollToFareHarbor()">Open live booking calendar</button>
+          </div>
+          <div class="contact-form">
+            <form>
+              <div class="form-row">
+                <label for="name">Name</label>
+                <input id="name" type="text" name="name" placeholder="Your full name" />
+              </div>
+              <div class="form-row">
+                <label for="email">Email</label>
+                <input id="email" type="email" name="email" placeholder="you@example.com" />
+              </div>
+              <div class="form-row">
+                <label for="dates">Preferred dates</label>
+                <input id="dates" type="text" name="dates" placeholder="e.g., Aug 15–19 or flexible in July" />
+              </div>
+              <div class="form-row">
+                <label for="guests">Number of guests</label>
+                <input id="guests" type="number" name="guests" min="1" max="6" placeholder="Up to 6 overnight guests" />
+              </div>
+              <div class="form-row">
+                <label for="type">Type of charter</label>
+                <select id="type" name="type">
+                  <option>Multi-day charter</option>
+                  <option>Special event / single-day</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="message">Tell us a bit about your trip</label>
+                <textarea id="message" name="message" placeholder="What kind of experience are you hoping for?"></textarea>
+                <div class="form-helper">
+                  This form is a placeholder. Your web host or developer can wire it to your email or booking CRM.
+                </div>
+              </div>
+              <button type="button" class="btn-secondary">Send (placeholder)</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© <span id="year"></span> <strong>Maranatha Charters LLC</strong>. All rights reserved.</span>
+      <span>Home port: Marina Bay, Quincy, MA · Serving the New England coast.</span>
+    </div>
+  </footer>
+</div>
+
+<script>
+  function toggleNav() {
+    const nav = document.getElementById('navLinks');
+    nav.classList.toggle('mobile-open');
+  }
+
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function scrollToFareHarbor() {
+    // For now, scroll to charters section where the widget will live
+    scrollToSection('charters');
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
